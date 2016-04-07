@@ -15,6 +15,12 @@
 #http://docs.puppetlabs.com/pe/latest/release_notes.html#filebucket-resource-no-longer-created-by-default
 File { backup => false }
 
+# enable the Puppet 4 behavior today
+#
+Package {
+  allow_virtual => true,
+}
+
 # DEFAULT NODE
 # Node definitions in this file are merged with node data from the console. See
 # http://docs.puppetlabs.com/guides/language_guide.html#nodes for more on
@@ -27,6 +33,5 @@ File { backup => false }
 
 node default {
   # This is where you can declare classes for all nodes.
-  # Example:
-  #   class { 'my_class': }
+  include "role::${::puppet_role}"
 }
