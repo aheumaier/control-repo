@@ -8,4 +8,4 @@
   - common
 
 :yaml:
-  :datadir: /etc/puppet/environments/%{environment}/hiera
+  :datadir: hieradata

@@ -61,8 +61,5 @@ class profile::base {
       group => 'root',
       mode  => '0644',
     }
-    # lint:endignore
   }
-
-
 }
